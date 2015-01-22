@@ -1,0 +1,19 @@
+#ATT-trello-container{
+    top: 20%;
+    left: 0;
+    right: 0;
+    max-width: 50%;
+    /*max-height: 500px;*/
+    margin: 0 auto;
+    position: fixed;
+    z-index:999999;
+    /*background-color: blue;*/
+    /*overflow: hidden;*/
+}
+#ATT-trello-container iframe{
+    border:none !important;
+    vertical-align:top;
+    z-index:20;
+    width: 100%;
+    height: 25em;
+}

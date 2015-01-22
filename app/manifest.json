@@ -1,0 +1,36 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "name": "Add to Trello",
+  "description": "Add card to Trello",
+  "version": "0.0.1",
+  "author": "@peeomid",
+
+  "manifest_version": 2,
+
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "notifications",
+    "<all_urls>"
+  ],
+
+  "background": {
+      "page": "html/background.html"
+   },
+
+   "options_page": "html/option.html",
+
+  "web_accessible_resources": [
+      "img/trello-48.png",
+      "html/*",
+      "html/frame/*",
+      "js/lib/*",
+      "css/*",
+      "js/*"
+  ],
+
+  "icons": { "48": "img/trello-48.png", "128":"img/trello.png"},
+
+  "content_security_policy": "script-src 'self' https://trello.com; object-src 'self'"
+}

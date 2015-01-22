@@ -1,0 +1,37 @@
+body{
+    background: transparent;
+}
+#modal{
+    margin: 5px;
+    border: solid 1px rgba(50, 50, 50, 0.75);
+    max-width: 500px;
+    max-height: 500px;
+    -webkit-box-shadow: 0px 0px 5px 3px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 0px 5px 3px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 0px 5px 3px rgba(50, 50, 50, 0.75);
+    background: white;
+}
+#modal-header{
+    border-bottom: solid 2px #0B6294;
+    padding: 5px;
+}
+#modal-header h3 {
+    color: #0B6294;
+}
+#main-content{
+    border-bottom: solid 1px gray;
+    padding: 5px;
+}
+#main-content input, #main-content textarea, #main-content select {
+    border: none;
+}
+#main-content .row.list {
+    margin-bottom: 5px;
+}
+#main-content .underline {
+    border-bottom: solid 1px gray;
+}
+
+#button-pannel {
+    padding: 5px;
+}

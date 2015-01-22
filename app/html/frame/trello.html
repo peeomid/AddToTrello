@@ -1,0 +1,59 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/frame.css" />
+    <title>iHeart</title>
+</head>
+<body>
+<div id="modal">
+    <div id="modal-header">
+        <button id="closeATT" type="button" class="close close-md" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3>Add to Trello</h3>
+    </div>
+    <div id="main-content">
+        <div class="row list">
+            <div class="col-xs-6">
+                <div class="underline">
+                    <select class="form-control"  id="board-list" placeholder="Enter board">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="underline">
+                    <select class="form-control"  id="list-list" placeholder="Enter list">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="email" class="form-control" id="card-title" placeholder="Card title">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <textarea id="card-description" class="form-control" rows="3" placeholder="Card description"></textarea>
+            </div>
+        </div>
+
+    </div>
+    <div id="button-pannel"  class="modal-footer">
+        <button type="button" data-dismiss="modal" class="btn close-md">Close</button>
+        <button id="addTrello" type="button" class="btn btn-primary">Save changes</button>
+    </div>
+</div>
+<script src="../../js/lib/jquery-2.0.3.min.js"></script>
+<script src="../../js/frame.js"></script>
+
+</body>
+</html>
