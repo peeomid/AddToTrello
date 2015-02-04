@@ -13,7 +13,7 @@ function init() {
                 scope: {read: true, write: false},
                 success: function () {
                     chrome.extension.sendMessage({
-                        command: 'saveToken',
+                        message: 'saveToken',
                         token: localStorage.getItem('trello_token')
                     }, function(data) {
                         // chrome.tabs.getCurrent(function (tab) {

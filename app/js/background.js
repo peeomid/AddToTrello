@@ -82,12 +82,13 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse){
     // }
 });
 
+// Hanlde message from content script
 chrome.extension.onMessage.addListener(
     function (request, sender, sendResponse) {
         // chrome.pageAction.show(sender.tab.id);
 
         // Now we have a token saved locally, as fetched from the settings page after authorization.
-        if (request.command == 'saveToken') {
+        if (request.message == 'saveToken') {
             localStorage.setItem('trello_token', request.token);
             // sendResponse();
             console.log('background: '+ localStorage.getItem('trello_token'));
@@ -97,17 +98,13 @@ chrome.extension.onMessage.addListener(
 
     });
 
+var background = {
+    tell: function(tab, message, data) {
+        var data = data || {};
 
-function getBoardList(callback) {
-    Trello.get("members/me/boards", function(boards) {
-        // $boards.empty();
-        // $.each(boards, function(ix, board) {
-        //     $("<option>")
-        //     .attr({href: board.url, target: "trello"})
-        //     .addClass("board")
-        //     .text(board.name)
-        //     .appendTo($boards);
-        // });
-        console.log(boards);
-    });
-};
+        chrome.tabs.sendMessage(tab.id, {
+            message : message,
+            data : data
+        });
+    }
+}

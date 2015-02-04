@@ -76,3 +76,17 @@ function add2Trello(data){
     console.log(data);
     chrome.extension.sendRequest({action: "ATTaddTrello", data: data, url: window.location.href});
 }
+
+// Utils
+
+var contentScript = {
+    // Adapted from: http://www.sitepoint.com/chrome-extensions-bridging-the-gap-between-layers/
+    tellBackGround: function(message, data){
+        var data = data || {};
+        // send a message to "background.js"
+        chrome.extension.sendRequest({
+            message : message,
+            data : data
+        });
+    }
+}

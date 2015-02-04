@@ -26,7 +26,6 @@ var TrelloClient = {
     },
 
 
-
     // Lists
     getListFromBoard: function(boardId, callback) {
         var url = "boards/" + boardId + "/lists";
@@ -54,8 +53,21 @@ var TrelloClient = {
         });
     },
 
+    buildListOptions: function(lists) {
+        var html = "";
+        lists.forEach(function(list){
+            html += '<option value="' + list.id + '">' + list.name + '</option>' + "\n";
+        });
+
+        return html;
+    },
     // Cards
     createCard: function(listId, card) {
+        // param:
+        // card => object {
+        //    name:
+        //    desc:
+        // }
         Trello.post("lists/" + listId + "/cards", {
             name: card.name,
             desc: card.desc
