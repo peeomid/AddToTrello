@@ -61,8 +61,12 @@ function init() {
     }
 
     function getBoardList() {
-        Trello.get("members/me/boards", function(boards) {
-            console.log(boards);
+        // boards = TrelloClient.getBoardList();
+        // options = TrelloClient.buildBoardListOptions();
+        TrelloClient.getBoardList(function(boards){
+            var sortedBoards = TrelloClient.sortBoardByName(boards);
+            var html = TrelloClient.buildBoardListOptions(sortedBoards);
+            console.log(html);
         });
     };
 
